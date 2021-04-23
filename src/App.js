@@ -1,12 +1,12 @@
 import React from 'react';
 import{ BrowserRouter as Router, Route } from 'react-router-dom';
 
-import FormUsuario from './components/form-usuario.component';
+import FormKilimpo from './components/form-kilimpo.component';
 
 function App() {
   return (
     <Router>
-      <Route path='/' component={FormUsuario} />
+      <Route path='/' component={FormKilimpo} />
     </Router>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import{ BrowserRouter as Router, Route } from 'react-router-dom';
 
-import FormKilimpo from './components/form-kilimpo.component';
+import FormKilimpo from './components/form-kilimpo';
 
 function App() {
   return (

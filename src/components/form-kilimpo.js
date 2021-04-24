@@ -197,7 +197,7 @@ export default class FormKilimpo extends Component {
                     <Col sm={10}>
                         <Form.Check
                         type="radio"
-                        name="formHorizontalRadios"
+                        name="formVerticalRadios"
                         checked={this.state.whatsapp === obj.value}
                         value={obj.value}
                         onChange={this.onChangeWhatsapp} />

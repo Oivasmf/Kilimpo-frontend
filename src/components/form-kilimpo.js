@@ -23,7 +23,7 @@ export default class FormKilimpo extends Component {
             horario: '',
             placa: '',
             whats: [
-                { value: 'Sim', label: "Sim" },
+                { value: 'Sim', label: "Sim  " },
                 { value: 'Nao', label: "Não" },
             ],
             data: '',
@@ -201,8 +201,7 @@ export default class FormKilimpo extends Component {
                         checked={this.state.whatsapp === obj.value}
                         value={obj.value}
                         onChange={this.onChangeWhatsapp} />
-                        {obj.label} 
-                        
+                        {obj.label}
                 </React.Fragment>);
             })
         }

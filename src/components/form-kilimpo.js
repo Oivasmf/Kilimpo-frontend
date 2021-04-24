@@ -187,7 +187,7 @@ export default class FormKilimpo extends Component {
   </Form.Group>
 
   <fieldset>
-    <Form.Group as={Row}>
+    <Form.Group as={Row} inline>
         {
             this.state.whats.map((obj, idx) => {
                 return(<React.Fragment key={idx}>

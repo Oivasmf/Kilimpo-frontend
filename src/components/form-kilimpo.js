@@ -130,35 +130,34 @@ export default class FormKilimpo extends Component {
         }
         let kilimpo = [];
         if (contexto.kilimpo) {
-            console.log("ss");
             kilimpo = [
                 (<li key='1'>
                     <b>Nome:</b> {contexto.kilimpo.nome}
                 </li>),
-                // (<li key='2'>
-                //     <b>Telefone:</b> {contexto.kilimpo.telefone}
-                // </li>),
-                // (<li key='3'>
-                //     <b>Whatsapp:</b> {contexto.kilimpo.whatsapp}
-                // </li>),
-                // (<li key='4'>
-                //     <b>Marca do veículo:</b> {contexto.kilimpo.marca}
-                // </li>),
-                // (<li key='5'>
-                //     <b>Modelo:</b> {contexto.kilimpo.modelo}
-                // </li>),
-                // (<li key='6'>
-                //     <b>Ano:</b> {contexto.kilimpo.ano}
-                // </li>),
-                // (<li key='7'>
-                //     <b>Placa:</b> {contexto.kilimpo.placa}
-                // </li>),
-                // (<li key='8'>
-                //     <b>Data:</b> {contexto.kilimpo.data}
-                // </li>),
-                // (<li key='9'>
-                //     <b>Horario:</b> {contexto.kilimpo.horario}
-                // </li>),
+                (<li key='2'>
+                    <b>Telefone:</b> {contexto.kilimpo.telefone}
+                </li>),
+                (<li key='3'>
+                    <b>Whatsapp:</b> {contexto.kilimpo.whatsapp}
+                </li>),
+                (<li key='4'>
+                    <b>Marca do veículo:</b> {contexto.kilimpo.marca}
+                </li>),
+                (<li key='5'>
+                    <b>Modelo:</b> {contexto.kilimpo.modelo}
+                </li>),
+                (<li key='6'>
+                    <b>Ano:</b> {contexto.kilimpo.ano}
+                </li>),
+                (<li key='7'>
+                    <b>Placa:</b> {contexto.kilimpo.placa}
+                </li>),
+                (<li key='8'>
+                    <b>Data:</b> {contexto.kilimpo.data}
+                </li>),
+                (<li key='9'>
+                    <b>Horario:</b> {contexto.kilimpo.horario}
+                </li>),
             ]
         } // fim do if (contexto.kilimpo)
 

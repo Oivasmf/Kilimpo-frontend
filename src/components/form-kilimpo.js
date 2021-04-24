@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+impo
 
 export default class FormKilimpo extends Component {
     constructor(props) {
@@ -8,19 +12,19 @@ export default class FormKilimpo extends Component {
         this.backendUrl = 'http://ec2-54-175-209-214.compute-1.amazonaws.com:3389/kilimpo';
 
         this.baseState = {
-            nome:'',
-            telefone:'',
-            whatsapp:'',
-            marca:'',
-            modelo:'',
-            ano:'',
-            horario:'',
-            placa:'',
+            nome: '',
+            telefone: '',
+            whatsapp: '',
+            marca: '',
+            modelo: '',
+            ano: '',
+            horario: '',
+            placa: '',
             whats: [
-                { value:'Sim', label: "Sim" },
-                { value:'Nao', label: "Não" },
+                { value: 'Sim', label: "Sim" },
+                { value: 'Nao', label: "Não" },
             ],
-            data:'',
+            data: '',
             horarios: [
                 { value: '08:00h', label: "08:00h" },
                 { value: '08:30h', label: "08:30h" },
@@ -96,21 +100,21 @@ export default class FormKilimpo extends Component {
     onSubmit(e) {
         e.preventDefault();
         const kilimpo = {
-            nome:this.state.nome,
-            telefone:this.state.telefone,
-            whatsapp:this.state.whatsapp,
-            marca:this.state.marca,
-            modelo:this.state.modelo,
-            ano:this.state.ano,
-            placa:this.state.placa,
-            horario:this.state.horario,
-            data:this.state.data,
+            nome: this.state.nome,
+            telefone: this.state.telefone,
+            whatsapp: this.state.whatsapp,
+            marca: this.state.marca,
+            modelo: this.state.modelo,
+            ano: this.state.ano,
+            placa: this.state.placa,
+            horario: this.state.horario,
+            data: this.state.data,
         };// fim do const kilimpo
 
         axios.post(this.backendUrl, kilimpo)
             .then(res => this.setState({ contexto: res.data }))
             .catch(erro => this.setState({ contexto: erro.response.data }));
-            
+
         this.setState(this.baseState);
     }// fim do onSubmit()
 
@@ -120,48 +124,107 @@ export default class FormKilimpo extends Component {
         if (contexto.erros) {
             erros = contexto.erros.map(
                 (erro, idx) => (
-                <li key={idx}>{erro.msg}</li>));
-            }
-            let kilimpo = [];
-            if(contexto.kilimpo) {
-                kilimpo = [
-                    (<li key='1'>
-                        <b>Nome:</b> {contexto.kilimpo.nome}
-                    </li>),
-                    (<li key='2'>
-                        <b>Telefone:</b> {contexto.kilimpo.telefone}
-                    </li>),
-                    (<li key='3'>
-                        <b>Whatsapp:</b> {contexto.kilimpo.whatsapp}
-                    </li>),
-                    (<li key='4'>
-                        <b>Marca do veículo:</b> {contexto.kilimpo.marca}
-                    </li>),
-                    (<li key='5'>
-                        <b>Modelo:</b> {contexto.kilimpo.modelo}
-                    </li>),
-                    (<li key='6'>
-                        <b>Ano:</b> {contexto.kilimpo.ano}
-                    </li>),
-                    (<li key='7'>
-                        <b>Placa:</b> {contexto.kilimpo.placa}
-                    </li>),
-                    (<li key='8'>
-                     <b>Data:</b> {contexto.kilimpo.data}
-                    </li>),
-                    (<li key='9'>
-                        <b>Horario:</b> {contexto.kilimpo.horario}
-                    </li>),
-                    ]
-            } // fim do if (contexto.kilimpo)
-            
-            return (
-                <>
-                    <h1>
-                        Lavação automotiva KiLimpo
+                    <li key={idx}>{erro.msg}</li>));
+        }
+        let kilimpo = [];
+        if (contexto.kilimpo) {
+            kilimpo = [
+                (<li key='1'>
+                    <b>Nome:</b> {contexto.kilimpo.nome}
+                </li>),
+                (<li key='2'>
+                    <b>Telefone:</b> {contexto.kilimpo.telefone}
+                </li>),
+                (<li key='3'>
+                    <b>Whatsapp:</b> {contexto.kilimpo.whatsapp}
+                </li>),
+                (<li key='4'>
+                    <b>Marca do veículo:</b> {contexto.kilimpo.marca}
+                </li>),
+                (<li key='5'>
+                    <b>Modelo:</b> {contexto.kilimpo.modelo}
+                </li>),
+                (<li key='6'>
+                    <b>Ano:</b> {contexto.kilimpo.ano}
+                </li>),
+                (<li key='7'>
+                    <b>Placa:</b> {contexto.kilimpo.placa}
+                </li>),
+                (<li key='8'>
+                    <b>Data:</b> {contexto.kilimpo.data}
+                </li>),
+                (<li key='9'>
+                    <b>Horario:</b> {contexto.kilimpo.horario}
+                </li>),
+            ]
+        } // fim do if (contexto.kilimpo)
+
+        return (
+            <>
+                <h1>
+                    Lavação automotiva KiLimpo
                     </h1>
-                    <form onSubmit={this.onSubmit}>
-                        <fieldset>
+                
+                    <Form>
+  <Form.Group as={Row} controlId="formHorizontalEmail">
+    <Form.Label column sm={2}>
+      Nome completo
+    </Form.Label>
+    <Col sm={10}>
+      <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome}/>
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} controlId="formHorizontalPassword">
+    <Form.Label column sm={2}>
+      Password
+    </Form.Label>
+    <Col sm={10}>
+      <Form.Control type="password" placeholder="Password" />
+    </Col>
+  </Form.Group>
+  <fieldset>
+    <Form.Group as={Row}>
+      <Form.Label as="legend" column sm={2}>
+        Radios
+      </Form.Label>
+      <Col sm={10}>
+        <Form.Check
+          type="radio"
+          label="first radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios1"
+        />
+        <Form.Check
+          type="radio"
+          label="second radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios2"
+        />
+        <Form.Check
+          type="radio"
+          label="third radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios3"
+        />
+      </Col>
+    </Form.Group>
+  </fieldset>
+  <Form.Group as={Row} controlId="formHorizontalCheck">
+    <Col sm={{ span: 10, offset: 2 }}>
+      <Form.Check label="Remember me" />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row}>
+    <Col sm={{ span: 10, offset: 2 }}>
+      <Button type="submit">Sign in</Button>
+    </Col>
+  </Form.Group>
+</Form>
+
+
+                    {/* <fieldset>
                             <legend>Agendamento</legend>
                             Nome completo: *<br />
                             <input type="text" value={this.state.nome}
@@ -226,15 +289,15 @@ export default class FormKilimpo extends Component {
                             <input type="button" value="Limpar"
                                 onClick={this.onReset} />
                             * Campos obrigatórios
-                        </fieldset>
-                    </form>
-                    {
-                        contexto.erros && <ul>{erros}</ul>
-                    }
-                    
-                    <h2>Dados recebidos:</h2>
-                    {contexto.kilimpo && <ul>{kilimpo}</ul>}
-                </>
-            );// fim do return
-        }// fim do render()
-    }// fim da classe Formkilimpo
+                        </fieldset> */}
+
+                {
+                    contexto.erros && <ul>{erros}</ul>
+                }
+
+                <h2>Dados recebidos:</h2>
+                {contexto.kilimpo && <ul>{kilimpo}</ul>}
+            </>
+        );// fim do return
+    }// fim do render()
+}// fim da classe Formkilimpo

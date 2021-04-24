@@ -187,11 +187,11 @@ export default class FormKilimpo extends Component {
   </Form.Group>
 
   <fieldset>
-    <Form.Group as={Row} inline>
+    <Form.Group as={Row}>
         {
             this.state.whats.map((obj, idx) => {
                 return(<React.Fragment key={idx}>
-                    <Form.Label as="legend" column sm={2}>
+                    <Form.Label as="legend" sm={2}>
                         Radios
                     </Form.Label>
                     <Col sm={10}>

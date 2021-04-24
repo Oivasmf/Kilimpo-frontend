@@ -191,10 +191,10 @@ export default class FormKilimpo extends Component {
                     <Form.Label as="legend" column sm={2}>
                         Radios
                     </Form.Label>
+                    <Col sm={10}>
         {
             this.state.whats.map((obj, idx) => {
                 return(<React.Fragment key={idx}>
-                    <Col sm={10}>
                         <Form.Check inline
                         type="radio"
                         name="Whatsapp"
@@ -202,10 +202,10 @@ export default class FormKilimpo extends Component {
                         value={obj.value}
                         onChange={this.onChangeWhatsapp} />
                         {obj.label}
-                    </Col>
                 </React.Fragment>);
             })
         }
+                    </Col>
       
     </Form.Group>
   </fieldset>

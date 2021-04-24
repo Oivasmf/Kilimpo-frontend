@@ -42,7 +42,7 @@ export default class FormKilimpo extends Component {
                 { value: '15:30h', label: "15:30h" },
                 { value: '16:00h', label: "16:00h" },
                 { value: '16:30h', label: "16:30h" },
-                { value: '17:00h', label: "17:00h" },
+                { value: '17:00h', label: "17:00h" }, 
                 { value: '17:30h', label: "17:30h" },
             ],
             contexto: {}

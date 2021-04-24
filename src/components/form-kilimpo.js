@@ -222,6 +222,9 @@ export default class FormKilimpo extends Component {
       <Button type="submit">Sign in</Button>
     </Col>
   </Form.Group>
+  <input type="submit" value="Enviar" />
+                            <input type="button" value="Limpar"
+                                onClick={this.onReset} />
 </Form>
 
 

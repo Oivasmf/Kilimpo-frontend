@@ -130,6 +130,7 @@ export default class FormKilimpo extends Component {
         }
         let kilimpo = [];
         if (contexto.kilimpo) {
+            console.log("ss");
             kilimpo = [
                 (<li key='1'>
                     <b>Nome:</b> {contexto.kilimpo.nome}

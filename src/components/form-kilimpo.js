@@ -3,8 +3,6 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-impo
-
 export default class FormKilimpo extends Component {
     constructor(props) {
         super(props);

@@ -168,48 +168,47 @@ export default class FormKilimpo extends Component {
                     </h1>
                 
                     <Form>
-  <Form.Group as={Row} controlId="formHorizontalEmail">
+  <Form.Group as={Row}>
     <Form.Label column sm={2}>
-      Nome completo
+      Nome completo *
     </Form.Label>
     <Col sm={5}>
       <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome}/>
     </Col>
   </Form.Group>
 
-  <Form.Group as={Row} controlId="formHorizontalPassword">
+  <Form.Group as={Row}>
     <Form.Label column sm={2}>
-      Password
+      Telefone
     </Form.Label>
-    <Col sm={10}>
-      <Form.Control type="password" placeholder="Password" />
+    <Col sm={5}>
+      <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
     </Col>
   </Form.Group>
+
   <fieldset>
     <Form.Group as={Row}>
-      <Form.Label as="legend" column sm={2}>
-        Radios
-      </Form.Label>
-      <Col sm={10}>
-        <Form.Check
-          type="radio"
-          label="first radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios1"
-        />
-        <Form.Check
-          type="radio"
-          label="second radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios2"
-        />
-        <Form.Check
-          type="radio"
-          label="third radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios3"
-        />
-      </Col>
+        {
+            this.state.whats.map((obj, idx) => {
+                return(<React.Fragment key={idx}>
+                    <Form.Label as="legend" column sm={2}>
+                        Radios
+                    </Form.Label>
+                    <Col sm={10}>
+                        <Form.Check
+                        type="radio"
+                        label="Sim"
+                        name="formHorizontalRadios"
+                        checked={this.state.whatsapp === obj.value}
+                        value={obj.value}
+                        onChange={this.onChangeWhatsapp} />
+                        {obj.label}
+                        />
+                    </Col>
+                </React.Fragment>);
+            })
+        }
+      
     </Form.Group>
   </fieldset>
   <Form.Group as={Row} controlId="formHorizontalCheck">

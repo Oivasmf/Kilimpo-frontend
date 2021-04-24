@@ -201,7 +201,8 @@ export default class FormKilimpo extends Component {
                         checked={this.state.whatsapp === obj.value}
                         value={obj.value}
                         onChange={this.onChangeWhatsapp} />
-                        {obj.label}
+                        {obj.label} 
+                        
                 </React.Fragment>);
             })
         }

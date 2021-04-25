@@ -173,8 +173,8 @@ export default class FormKilimpo extends Component {
                 </h2>
                 <br />
                 <Form onSubmit={this.onSubmit}>
-                    <Form.Group className="col-md-6 offset-md-3">
-                        <Form.Row>
+                    <Form.Group className="col-md-6 offset-md-4">
+                        <Form.Row className="text-center">
                             <Form.Label column sm={2}>
                                 Nome completo *
                             </Form.Label>
@@ -184,8 +184,8 @@ export default class FormKilimpo extends Component {
                         </Form.Row>
                     </Form.Group>
 
-                    <Form.Group className="col-md-6 offset-md-3">
-                        <Form.Row>
+                    <Form.Group className="col-md-6 offset-md-4">
+                        <Form.Row className="text-center">
                             <Form.Label column sm={2}>
                                 Telefone
                             </Form.Label>
@@ -196,9 +196,9 @@ export default class FormKilimpo extends Component {
                     </Form.Group>
 
                     <fieldset>
-                        <Form.Group>
-                            <Form.Row>
-                                <Form.Label as="legend" column sm={1} className="text-center">
+                        <Form.Group className="col-md-6 offset-md-4">
+                            <Form.Row className="text-center">
+                                <Form.Label as="legend" column sm={2}>
                                     Possui Whatsapp?
                                 </Form.Label>
                                 <Col>

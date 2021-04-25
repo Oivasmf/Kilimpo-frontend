@@ -163,101 +163,102 @@ export default class FormKilimpo extends Component {
 
         return (
             <> <Container fluid>
+                <font face="Arial">
 
-                <h1>
+                <h1 className="text-center">
                     Lavação automotiva KiLimpo
                 </h1>
                 <br />
-  <br />
-  <br />
-                <h2>
+                <br />
+                <br />
+                <h2 className="text-center">
                     Informações do proprietário
                 </h2>
-                    <Form onSubmit={this.onSubmit}>
-  <Form.Group as={Row} className="text-center">
-    <Form.Label column sm={1}>
-      Nome completo *
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group as={Row} className="text-center">
+                        <Form.Label column sm={1}>
+                            Nome completo *
     </Form.Label>
-    <Col sm={5}>
-      <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome}/>
-    </Col>
-  </Form.Group>
+                        <Col sm={5}>
+                            <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome} />
+                        </Col>
+                    </Form.Group>
 
-  <Form.Group as={Row} className="text-center">
-    <Form.Label column sm={1}>
-      Telefone
+                    <Form.Group as={Row} className="text-center">
+                        <Form.Label column sm={1}>
+                            Telefone
     </Form.Label>
-    <Col sm={5}>
-      <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
-    </Col>
-  </Form.Group>
+                        <Col sm={5}>
+                            <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
+                        </Col>
+                    </Form.Group>
 
-  <fieldset>
-    <Form.Group as={Row}>
-        <Form.Label as="legend" column sm={1} className="text-center">
-            Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
+                    <fieldset>
+                        <Form.Group as={Row}>
+                            <Form.Label as="legend" column sm={1} className="text-center">
+                                Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
         </Form.Label>
-        <Col>
-        {
-            this.state.whats.map((obj, idx) => {
-                return(<React.Fragment key={idx}>
-                    <Form.Check inline
-                    type="radio"
-                    name="Whatsapp"
-                    checked={this.state.whatsapp === obj.value}
-                    value={obj.value}
-                    onChange={this.onChangeWhatsapp} />
-                    {obj.label}
-                    </React.Fragment>);
-            })
-        }
-        </Col>
-    </Form.Group>
-  </fieldset>
-  <br />
-  <br />
-  <br />
-                <h2 className="text-center">
-                    Informações do veículo 
+                            <Col>
+                                {
+                                    this.state.whats.map((obj, idx) => {
+                                        return (<React.Fragment key={idx}>
+                                            <Form.Check inline
+                                                type="radio"
+                                                name="Whatsapp"
+                                                checked={this.state.whatsapp === obj.value}
+                                                value={obj.value}
+                                                onChange={this.onChangeWhatsapp} />
+                                            {obj.label}
+                                        </React.Fragment>);
+                                    })
+                                }
+                            </Col>
+                        </Form.Group>
+                    </fieldset>
+                    <br />
+                    <br />
+                    <br />
+                    <h2 className="text-center">
+                        Informações do veículo
                 </h2>
-  <Form.Row className="text-center">
-        <Form.Group as={Col}>
-            <Form.Label>
-            Marca *
+                    <Form.Row className="text-center">
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Marca *
             </Form.Label>
-            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca}/>
-        </Form.Group>
+                            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca} />
+                        </Form.Group>
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Modelo *
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Modelo *
             </Form.Label>
-            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo}/>
-        </Form.Group>
+                            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} />
+                        </Form.Group>
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Placa *
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Placa *
             </Form.Label>
-            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca}/>
-        </Form.Group>
+                            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca} />
+                        </Form.Group>
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Ano
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Ano
             </Form.Label>
-            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno}/>
-        </Form.Group>
-    </Form.Row>
-  
-
-  <input type="submit" value="Enviar" />
-                            <input type="button" value="Limpar"
-                                onClick={this.onReset} />
-</Form>
+                            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno} />
+                        </Form.Group>
+                    </Form.Row>
 
 
-                    {/* <fieldset>
+                    <input type="submit" value="Enviar" />
+                    <input type="button" value="Limpar"
+                        onClick={this.onReset} />
+                </Form>
+
+
+                {/* <fieldset>
                             <legend>Agendamento</legend>
                             Nome completo: *<br />
                             <input type="text" value={this.state.nome}
@@ -330,7 +331,8 @@ export default class FormKilimpo extends Component {
 
                 <h2>Dados recebidos:</h2>
                 {contexto.kilimpo && <ul>{kilimpo}</ul>}
-                </Container>
+                </font>
+            </Container>
             </>
         );// fim do return
     }// fim do render()

@@ -121,15 +121,15 @@ export default class FormKilimpo extends Component {
     }// fim do onSubmit()
 
     render() {
+
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {
+            console.log("TESTE");
             erros = contexto.erros.map(
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
-        }
-
-        
+        }        
         let kilimpo = [];
         if (contexto.kilimpo) {
             kilimpo = [
@@ -161,9 +161,6 @@ export default class FormKilimpo extends Component {
                     <b>Horario:</b> {contexto.kilimpo.horario}
                 </li>),
             ]
-            if(contexto.erros == []){
-                alert("teste");
-            }
         } // fim do if (contexto.kilimpo)
 
         return (

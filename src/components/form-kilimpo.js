@@ -123,7 +123,9 @@ export default class FormKilimpo extends Component {
 
         const contexto = this.state.contexto;
         let erros = [];
+        console.log("fora");
         if (contexto.erros) {
+            console.log("dentro");
             var v1=contexto.erros.length;
             var v2=erros.length;
             if (v1==v2){

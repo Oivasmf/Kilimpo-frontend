@@ -129,7 +129,7 @@ export default class FormKilimpo extends Component {
                     <li key={idx}>{erro.msg}</li>));
         }
 
-        if(contexto.erros.lenght==0){
+        if(contexto.erros.length==0){
             console.log("oi");
         }
         let kilimpo = [];

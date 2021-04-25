@@ -121,6 +121,13 @@ export default class FormKilimpo extends Component {
     }// fim do onSubmit()
 
     render() {
+        function hideResult() {
+            var x = document.getElementById("resultado");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+        }
+        // hideResult();
+
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {
@@ -369,7 +376,8 @@ export default class FormKilimpo extends Component {
                         contexto.erros && <ul>{erros}</ul>
                     }
 
-                    <div style="visibility: hidden">
+                    <div id="resultado">
+                        <h2>Seu horário foi agendado com sucesso!</h2><br />
                         <h2>Dados recebidos:</h2>
                         {contexto.kilimpo && <ul>{kilimpo}</ul>}
                     </div>

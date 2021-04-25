@@ -255,8 +255,41 @@ export default class FormKilimpo extends Component {
                             <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno} />
                         </Form.Group>
                     </Form.Row>
-                    <br />
+                    <br /><br /><br />
                     
+                    <h2 className="text-center">
+                        Data e horário do agendamento
+                    </h2>
+                    <br />
+
+                    <Form.Row className="text-center">
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Data *
+                            </Form.Label>
+                            <Form.Control type="date" value={this.state.data} onChange={this.onChangeData} />
+                        </Form.Group>
+
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Horário *
+                            </Form.Label>
+                            <Form.Control as="select" custom value={this.state.horario} 
+                            onChange={this.onChangeHorario}>
+                                <option value="-1">--Selecione o horário de atendimento</option>
+                                {
+                                    this.state.horarios.map(obj => {
+                                        return(<option key={obj.value}
+                                        value={obj.value}>{obj.label}</option>);
+                                        })
+                                }
+                            </Form.Control>
+                            {/* <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} /> */}
+                        </Form.Group>
+                    </Form.Row>
+
+
+                    <br /><br /><br />
                     <Form.Group>
                         <Button type="submit" variant="success">Enviar</Button>{' '}
                         {/* <input type="submit" value="Enviar" /> */}
@@ -264,7 +297,6 @@ export default class FormKilimpo extends Component {
                         {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}
                     </Form.Group>
                 </Form>
-
 
                     {/* <fieldset>
                             <legend>Agendamento</legend>

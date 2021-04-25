@@ -180,12 +180,11 @@ export default class FormKilimpo extends Component {
 
                         <Form.Row className="align-items-center">
                             <Form.Group as={Col}>
+                                
                                 <Form.Label column sm={1}>
                                     Nome completo *
                                 </Form.Label>
-                                <Col sm={5}>
                                     <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome} />
-                                </Col>
                             </Form.Group>
                         </Form.Row>
 

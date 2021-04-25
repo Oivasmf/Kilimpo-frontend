@@ -173,7 +173,7 @@ export default class FormKilimpo extends Component {
                 <h2>
                     Informações do proprietário
                 </h2>
-                    <Form>
+                    <Form className="justify-content-md-center">
   <Form.Group as={Row} class="text-center">
     <Form.Label column sm={2}>
       Nome completo *

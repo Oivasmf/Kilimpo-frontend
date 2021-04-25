@@ -173,8 +173,8 @@ export default class FormKilimpo extends Component {
                 <h2>
                     Informações do proprietário
                 </h2>
-                    <Form onSubmit={this.onSubmit} className="text-center">
-  <Form.Group as={Row} class="text-center">
+                    <Form onSubmit={this.onSubmit}>
+  <Form.Group as={Row}>
     <Form.Label column sm={2}>
       Nome completo *
     </Form.Label>
@@ -217,10 +217,11 @@ export default class FormKilimpo extends Component {
   <br />
   <br />
   <br />
-                <h2 class="text-center">
-                    Informações do veículo
+  <Form.Row className="text-center">
+                <h2>
+                    Informações do veículo 
                 </h2>
-  <Form.Row>
+                <br />
         <Form.Group as={Col}>
             <Form.Label>
             Marca *

@@ -169,10 +169,6 @@ export default class FormKilimpo extends Component {
             ]
         } // fim do if (contexto.kilimpo)
 
-        if (v1!=0){
-                   this.state.nome = kilimpo.nome;
-        }
-
         return (
             <> <Container fluid>
                 <font face="Arial">

@@ -159,7 +159,6 @@ export default class FormKilimpo extends Component {
                     <b>Horario:</b> {contexto.kilimpo.horario}
                 </li>),
             ]
-            if
         } // fim do if (contexto.kilimpo)
 
         return (

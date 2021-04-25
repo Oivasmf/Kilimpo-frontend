@@ -121,12 +121,10 @@ export default class FormKilimpo extends Component {
     }// fim do onSubmit()
 
     render() {
-        function hideResult() {
-            var x = document.getElementById("resultado");
-            if (x.style.display === "block") {
-              x.style.display = "none";
+        var x = document.getElementById("resultado");
+        if (x.style.display === "block") {
+            x.style.display = "none";
         }
-        // hideResult();
 
         const contexto = this.state.contexto;
         let erros = [];

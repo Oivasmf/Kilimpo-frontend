@@ -121,11 +121,6 @@ export default class FormKilimpo extends Component {
     }// fim do onSubmit()
 
     render() {
-        var x = document.getElementById("resultado");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        }
-
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {
@@ -133,6 +128,8 @@ export default class FormKilimpo extends Component {
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
         }
+
+        console.log(contexto.erros);
         let kilimpo = [];
         if (contexto.kilimpo) {
             kilimpo = [

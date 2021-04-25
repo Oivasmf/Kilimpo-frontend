@@ -178,7 +178,7 @@ export default class FormKilimpo extends Component {
 
 
 
-                            <Form.Group className="col-md-6">
+                            <Form.Group className="col-md-6 offset-md-3">
                                 <Form.Row>
                                 <Form.Label column sm={2}>
                                     Nome completo *

@@ -121,7 +121,6 @@ export default class FormKilimpo extends Component {
     }// fim do onSubmit()
 
     render() {
-        alert("teste");
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {

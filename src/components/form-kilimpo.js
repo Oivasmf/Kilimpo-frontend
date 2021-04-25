@@ -23,7 +23,7 @@ export default class FormKilimpo extends Component {
             horario: '',
             placa: '',
             whats: [
-                { value: 'Sim', label: "Sim  " },
+                { value: 'Sim', label: "Sim         " },
                 { value: 'Nao', label: "Não" },
             ],
             data: '',
@@ -188,38 +188,60 @@ export default class FormKilimpo extends Component {
 
   <fieldset>
     <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}>
-                        Radios
-                    </Form.Label>
-                    <Col sm={10}>
+        <Form.Label as="legend" column sm={2}>
+            Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
+        </Form.Label>
+        <Col sm={10}>
         {
             this.state.whats.map((obj, idx) => {
                 return(<React.Fragment key={idx}>
-                        <Form.Check inline
-                        type="radio"
-                        name="Whatsapp"
-                        checked={this.state.whatsapp === obj.value}
-                        value={obj.value}
-                        onChange={this.onChangeWhatsapp} />
-                        {obj.label}
-                </React.Fragment>);
+                    <Form.Check inline
+                    type="radio"
+                    name="Whatsapp"
+                    checked={this.state.whatsapp === obj.value}
+                    value={obj.value}
+                    onChange={this.onChangeWhatsapp} />
+                    {obj.label}
+                    </React.Fragment>);
             })
         }
-                    </Col>
-      
+        </Col>
     </Form.Group>
   </fieldset>
-  <Form.Group as={Row} controlId="formHorizontalCheck">
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Form.Check label="Remember me" />
-    </Col>
-  </Form.Group>
+  <br />
+  <br />
+  <br />
+  <Form.Row>
+        <Form.Group as={Col}>
+            <Form.Label>
+            Marca *
+            </Form.Label>
+            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca}/>
+        </Form.Group>
 
-  <Form.Group as={Row}>
-    <Col sm={{ span: 10, offset: 2 }}>
-      <Button type="submit">Sign in</Button>
-    </Col>
-  </Form.Group>
+        <Form.Group as={Col}>
+            <Form.Label>
+            Modelo *
+            </Form.Label>
+            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo}/>
+        </Form.Group>
+
+        <Form.Group as={Col}>
+            <Form.Label>
+            Placa *
+            </Form.Label>
+            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca}/>
+        </Form.Group>
+
+        <Form.Group as={Col}>
+            <Form.Label>
+            Ano
+            </Form.Label>
+            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno}/>
+        </Form.Group>
+    </Form.Row>
+  
+
   <input type="submit" value="Enviar" />
                             <input type="button" value="Limpar"
                                 onClick={this.onReset} />

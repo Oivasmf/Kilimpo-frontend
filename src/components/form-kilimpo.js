@@ -3,7 +3,6 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -124,22 +123,11 @@ export default class FormKilimpo extends Component {
 
         const contexto = this.state.contexto;
         let erros = [];
+        var v1=contexto.erros.length;
         if (contexto.erros) {
-            var v1 = contexto.erros.length;
-            var v2 = erros.length;
-            if (v1 == v2){
+            if (v1==0){
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
             } else {
-                this.state.nome = kilimpo.nome;
-
-
-
-
-
-
-
-
-
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
             }
             erros = contexto.erros.map(
@@ -179,6 +167,10 @@ export default class FormKilimpo extends Component {
                 </li>),
             ]
         } // fim do if (contexto.kilimpo)
+
+        if (v1!=0){
+                   this.state.nome = kilimpo.nome;
+        }
 
         return (
             <> <Container fluid>

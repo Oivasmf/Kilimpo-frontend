@@ -173,7 +173,7 @@ export default class FormKilimpo extends Component {
                 <h2>
                     Informações do proprietário
                 </h2>
-                    <Form className="justify-content-md-center">
+                    <Form className="text-center">
   <Form.Group as={Row} class="text-center">
     <Form.Label column sm={2}>
       Nome completo *
@@ -197,7 +197,7 @@ export default class FormKilimpo extends Component {
         <Form.Label as="legend" column sm={2}>
             Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
         </Form.Label>
-        <Col sm={10}>
+        <Col>
         {
             this.state.whats.map((obj, idx) => {
                 return(<React.Fragment key={idx}>

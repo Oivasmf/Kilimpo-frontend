@@ -162,7 +162,7 @@ export default class FormKilimpo extends Component {
         } // fim do if (contexto.kilimpo)
 
         return (
-            <> <Container fluid>
+            <> <Container fluid class="text-center">
 
                 <h1>
                     Lavação automotiva KiLimpo
@@ -255,7 +255,6 @@ export default class FormKilimpo extends Component {
                             <input type="button" value="Limpar"
                                 onClick={this.onReset} />
 </Form>
-</Container>
 
 
                     {/* <fieldset>
@@ -274,56 +273,56 @@ export default class FormKilimpo extends Component {
                                 this.state.whats.map((obj, idx) => {
                                     return(<React.Fragment key={idx}>
                                         <input type="radio" name="whatsapp"
-                                            checked={this.state.whatsapp === obj.value}
-                                            value={obj.value}
-                                            onChange={this.onChangeWhatsapp} />
+                                        checked={this.state.whatsapp === obj.value}
+                                        value={obj.value}
+                                        onChange={this.onChangeWhatsapp} />
                                         {obj.label}
-                                    </React.Fragment>);
-                                })
-                            }
-                            <br />
-                            <br />
-                            <br />
-                            Marca do veículo: *<br />
-                            <input type="text" value={this.state.marca}
+                                        </React.Fragment>);
+                                    })
+                                }
+                                <br />
+                                <br />
+                                <br />
+                                Marca do veículo: *<br />
+                                <input type="text" value={this.state.marca}
                                 onChange={this.onChangeMarca} /><br />
-
-                            Modelo: *<br />
-                            <input type="text" value={this.state.modelo}
+                                
+                                Modelo: *<br />
+                                <input type="text" value={this.state.modelo}
                                 onChange={this.onChangeModelo} /><br />
-
-                            Ano: <br />
-                            <input type="text" value={this.state.ano}
+                                
+                                Ano: <br />
+                                <input type="text" value={this.state.ano}
                                 onChange={this.onChangeAno} /><br />
-
-                            Placa: *<br />
-                            <input type="text" value={this.state.placa}
+                                
+                                Placa: *<br />
+                                <input type="text" value={this.state.placa}
                                 onChange={this.onChangePlaca} /><br /><br /><br />
-
-                            Data e horário de atendimento *<br />
-                            <input type="date" value={this.state.data}
+                                
+                                Data e horário de atendimento *<br />
+                                <input type="date" value={this.state.data}
                                 onChange={this.onChangeData}/>
-
-
-
-
-                            <select value={this.state.horario}
+                                
+                                
+                                
+                                
+                                <select value={this.state.horario}
                                 onChange={this.onChangeHorario}>
                                 <option value="-1">--Selecione o horário de atendimento</option>
                                 {
                                     this.state.horarios.map(obj => {
                                         return(<option key={obj.value}
                                             value={obj.value}>{obj.label}</option>);
-                                    })
-                                }
-                            </select><br />
-                            
-                            <hr />
-                            <input type="submit" value="Enviar" />
-                            <input type="button" value="Limpar"
-                                onClick={this.onReset} />
-                            * Campos obrigatórios
-                        </fieldset> */}
+                                        })
+                                    }
+                                    </select><br />
+                                    
+                                    <hr />
+                                    <input type="submit" value="Enviar" />
+                                    <input type="button" value="Limpar"
+                                    onClick={this.onReset} />
+                                    * Campos obrigatórios
+                                </fieldset> */}
 
                 {
                     contexto.erros && <ul>{erros}</ul>
@@ -331,6 +330,7 @@ export default class FormKilimpo extends Component {
 
                 <h2>Dados recebidos:</h2>
                 {contexto.kilimpo && <ul>{kilimpo}</ul>}
+                </Container>
             </>
         );// fim do return
     }// fim do render()

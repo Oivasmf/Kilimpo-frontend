@@ -125,7 +125,7 @@ export default class FormKilimpo extends Component {
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {
-            if (contexto.erros == undefined){
+            if (contexto.erros == erros){
                 console.log("TESTE");    
             }
 
@@ -133,7 +133,7 @@ export default class FormKilimpo extends Component {
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
         }
-        
+
         let kilimpo = [];
         if (contexto.kilimpo) {
             kilimpo = [

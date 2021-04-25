@@ -180,7 +180,7 @@ export default class FormKilimpo extends Component {
 
                             <Form.Group className="col-md-6">
                                 <Form.Row>
-                                <Form.Label>
+                                <Form.Label column sm={2}>
                                     Nome completo *
                                 </Form.Label>
                                 <Col sm={5}>

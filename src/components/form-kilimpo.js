@@ -129,9 +129,7 @@ export default class FormKilimpo extends Component {
                     <li key={idx}>{erro.msg}</li>));
         }
 
-        if(contexto.erros == undefined){
-            console.log("oi");
-        }
+        
         let kilimpo = [];
         if (contexto.kilimpo) {
             kilimpo = [
@@ -163,6 +161,9 @@ export default class FormKilimpo extends Component {
                     <b>Horario:</b> {contexto.kilimpo.horario}
                 </li>),
             ]
+            if(contexto.erros == undefined){
+                alert("teste");
+            }
         } // fim do if (contexto.kilimpo)
 
         return (

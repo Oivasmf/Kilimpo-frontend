@@ -197,8 +197,8 @@ export default class FormKilimpo extends Component {
 
                     <fieldset>
                         <Form.Group className="col-md-6 offset-md-4">
-                            <Form.Row className="text-center">
-                                <Form.Label as="legend" column sm={2}>
+                            <Form.Row>
+                                <Form.Label as="legend" column sm={2} className="text-center">
                                     Possui Whatsapp?
                                 </Form.Label>
                                 <Col>

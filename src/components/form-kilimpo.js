@@ -175,7 +175,7 @@ export default class FormKilimpo extends Component {
                     Informações do proprietário
                 </h2>
                 <Form onSubmit={this.onSubmit}>
-                    <Form.Group as={Row} className="text-center">
+                    <Form.Group as={Row} className="text-center align-items-center">
                         <Form.Label column sm={1}>
                             Nome completo *
     </Form.Label>

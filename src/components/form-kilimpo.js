@@ -161,7 +161,7 @@ export default class FormKilimpo extends Component {
                     <b>Horario:</b> {contexto.kilimpo.horario}
                 </li>),
             ]
-            if(contexto.erros == undefined){
+            if(contexto.erros == []){
                 alert("teste");
             }
         } // fim do if (contexto.kilimpo)

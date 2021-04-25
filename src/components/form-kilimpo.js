@@ -164,47 +164,43 @@ export default class FormKilimpo extends Component {
         return (
             <> <Container fluid>
                 <font face="Arial">
-
-                    <h1 className="text-center">
-                        Lavação automotiva KiLimpo
+                <h1 className="text-center">
+                    Lavação automotiva KiLimpo
                 </h1>
-                    <br />
-                    <br />
-                    <br />
-                    <h2 className="text-center">
-                        Informações do proprietário
+                <br /><br /><br />
+                <h2 className="text-center">
+                    Informações do proprietário
                 </h2>
-                    <Form onSubmit={this.onSubmit}>
-
-
-
-                            <Form.Group className="col-md-6 offset-md-3">
-                                <Form.Row>
-                                <Form.Label column sm={2}>
-                                    Nome completo *
-                                </Form.Label>
-                                <Col sm={5}>
-                                    <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome} />
-                                </Col>
+                <br />
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group className="col-md-6 offset-md-3">
+                        <Form.Row>
+                            <Form.Label column sm={2}>
+                                Nome completo *
+                            </Form.Label>
+                            <Col sm={5}>
+                                <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome} />
+                            </Col>
                         </Form.Row>
-                            </Form.Group>
+                    </Form.Group>
 
-
-
-                        <Form.Group as={Row} className="text-center">
-                            <Form.Label column sm={1}>
+                    <Form.Group className="col-md-6 offset-md-3">
+                        <Form.Row>
+                            <Form.Label column sm={2}>
                                 Telefone
-    </Form.Label>
+                            </Form.Label>
                             <Col sm={5}>
                                 <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
                             </Col>
-                        </Form.Group>
+                        </Form.Row>
+                    </Form.Group>
 
-                        <fieldset>
-                            <Form.Group as={Row}>
+                    <fieldset>
+                        <Form.Group>
+                            <Form.Row>
                                 <Form.Label as="legend" column sm={1} className="text-center">
-                                    Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
-        </Form.Label>
+                                    Possui Whatsapp?
+                                </Form.Label>
                                 <Col>
                                     {
                                         this.state.whats.map((obj, idx) => {
@@ -220,14 +216,15 @@ export default class FormKilimpo extends Component {
                                         })
                                     }
                                 </Col>
-                            </Form.Group>
-                        </fieldset>
-                        <br />
-                        <br />
-                        <br />
-                        <h2 className="text-center">
-                            Informações do veículo
-                </h2>
+                            </Form.Row>    
+                        </Form.Group>
+                    </fieldset>
+                    <br /><br /><br />
+
+                    <h2 className="text-center">
+                        Informações do veículo
+                    </h2>
+                    <br />
                         <Form.Row className="text-center">
                             <Form.Group as={Col}>
                                 <Form.Label>
@@ -258,7 +255,7 @@ export default class FormKilimpo extends Component {
                             </Form.Group>
                         </Form.Row>
 
-
+                        <br />
                         <input type="submit" value="Enviar" />
                         <input type="button" value="Limpar"
                             onClick={this.onReset} />

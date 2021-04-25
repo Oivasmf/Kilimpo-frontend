@@ -179,7 +179,7 @@ export default class FormKilimpo extends Component {
 
 
                         <Form.Row className="align-items-center">
-                            <Form.Group as={Row} className="text-center align-items-center">
+                            <Form.Group as={Col} className="text-center align-items-center">
                                 <Form.Label column sm={1}>
                                     Nome completo *
                                 </Form.Label>

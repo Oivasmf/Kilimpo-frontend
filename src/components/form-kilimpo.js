@@ -123,14 +123,13 @@ export default class FormKilimpo extends Component {
     render() {
         const contexto = this.state.contexto;
         let erros = [];
-        let teste_erros = [];
         if (contexto.erros) {
             erros = contexto.erros.map(
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
         }
 
-        if(contexto.erros === teste_erros){
+        if(contexto.erros == undefined){
             console.log("oi");
         }
         let kilimpo = [];

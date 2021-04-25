@@ -162,14 +162,15 @@ export default class FormKilimpo extends Component {
         } // fim do if (contexto.kilimpo)
 
         return (
-            <>
-                <h1 class="text-center">
+            <> <Container fluid>
+
+                <h1>
                     Lavação automotiva KiLimpo
                 </h1>
                 <br />
   <br />
   <br />
-                <h2 class="text-center">
+                <h2>
                     Informações do proprietário
                 </h2>
                     <Form>
@@ -254,18 +255,19 @@ export default class FormKilimpo extends Component {
                             <input type="button" value="Limpar"
                                 onClick={this.onReset} />
 </Form>
+</Container>
 
 
                     {/* <fieldset>
                             <legend>Agendamento</legend>
                             Nome completo: *<br />
                             <input type="text" value={this.state.nome}
-                                onChange={this.onChangeNome} /><br />
-
+                            onChange={this.onChangeNome} /><br />
+                            
                             Telefone: <br />
                             <input type="text" value={this.state.telefone}
                             onChange={this.onChangeTelefone} /><br />
-
+                            
                             Este número possui Whatsapp? * ([NÃO] caso prefira não informar o telefone)
                             <br />
                             {

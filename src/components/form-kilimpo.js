@@ -267,7 +267,7 @@ export default class FormKilimpo extends Component {
                             <Form.Label>
                                 Data *
                             </Form.Label>
-                            <Form.Control type="date" value={this.state.data} onChange={this.onChangeData} />
+                            <Form.Control type="date" value={this.state.data} onChange={this.onChangeData} className="text-center"/>
                         </Form.Group>
 
                         <Form.Group as={Col}>
@@ -275,7 +275,7 @@ export default class FormKilimpo extends Component {
                                 Horário *
                             </Form.Label>
                             <Form.Control as="select" custom value={this.state.horario} 
-                            onChange={this.onChangeHorario}>
+                            onChange={this.onChangeHorario} className="text-center">
                                 <option value="-1">--Selecione o horário de atendimento</option>
                                 {
                                     this.state.horarios.map(obj => {

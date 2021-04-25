@@ -174,8 +174,8 @@ export default class FormKilimpo extends Component {
                     Informações do proprietário
                 </h2>
                     <Form onSubmit={this.onSubmit}>
-  <Form.Group as={Row}>
-    <Form.Label column sm={2}>
+  <Form.Group as={Row} className="text-center">
+    <Form.Label column sm={1}>
       Nome completo *
     </Form.Label>
     <Col sm={5}>
@@ -183,8 +183,8 @@ export default class FormKilimpo extends Component {
     </Col>
   </Form.Group>
 
-  <Form.Group as={Row}>
-    <Form.Label column sm={2}>
+  <Form.Group as={Row} className="text-center">
+    <Form.Label column sm={1}>
       Telefone
     </Form.Label>
     <Col sm={5}>
@@ -194,7 +194,7 @@ export default class FormKilimpo extends Component {
 
   <fieldset>
     <Form.Group as={Row}>
-        <Form.Label as="legend" column sm={2}>
+        <Form.Label as="legend" column sm={1} className="text-center">
             Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
         </Form.Label>
         <Col>
@@ -217,11 +217,10 @@ export default class FormKilimpo extends Component {
   <br />
   <br />
   <br />
-  <Form.Row className="text-center">
-                <h2>
+                <h2 className="text-center">
                     Informações do veículo 
                 </h2>
-                <br />
+  <Form.Row className="text-center">
         <Form.Group as={Col}>
             <Form.Label>
             Marca *

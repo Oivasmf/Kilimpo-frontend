@@ -225,40 +225,42 @@ export default class FormKilimpo extends Component {
                         Informações do veículo
                     </h2>
                     <br />
-                        <Form.Row className="text-center">
-                            <Form.Group as={Col}>
-                                <Form.Label>
-                                    Marca *
-            </Form.Label>
-                                <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca} />
-                            </Form.Group>
 
-                            <Form.Group as={Col}>
-                                <Form.Label>
-                                    Modelo *
-            </Form.Label>
-                                <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} />
-                            </Form.Group>
+                    <Form.Row className="text-center">
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Marca *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca} />
+                        </Form.Group>
 
-                            <Form.Group as={Col}>
-                                <Form.Label>
-                                    Placa *
-            </Form.Label>
-                                <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca} />
-                            </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Modelo *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} />
+                        </Form.Group>
 
-                            <Form.Group as={Col}>
-                                <Form.Label>
-                                    Ano
-            </Form.Label>
-                                <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno} />
-                            </Form.Group>
-                        </Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Placa *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca} />
+                        </Form.Group>
 
-                        <br />
-                        <input type="submit" value="Enviar" />
-                        <input type="button" value="Limpar"
-                            onClick={this.onReset} />
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Ano
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno} />
+                        </Form.Group>
+                    </Form.Row>
+                    <br />
+
+                    <Button type="submit" variant="success">Enviar</Button>{' '}
+                    {/* <input type="submit" value="Enviar" /> */}
+                    <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
+                    {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}
                     </Form>
 
 

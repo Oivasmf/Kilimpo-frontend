@@ -259,7 +259,7 @@ export default class FormKilimpo extends Component {
                     
                     <Form.Group className="col-md-6 offset-md-5">
                         <Form.Row>
-                            <Button type="submit" variant="success">Enviar</Button>{' '}
+                            <Button type="submit" variant="success" column sm={1}>Enviar</Button>{' '}
                             {/* <input type="submit" value="Enviar" /> */}
                             <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
                             {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}

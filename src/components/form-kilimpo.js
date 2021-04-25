@@ -159,6 +159,7 @@ export default class FormKilimpo extends Component {
                     <b>Horario:</b> {contexto.kilimpo.horario}
                 </li>),
             ]
+            if
         } // fim do if (contexto.kilimpo)
 
         return (
@@ -281,7 +282,7 @@ export default class FormKilimpo extends Component {
                                     this.state.horarios.map(obj => {
                                         return(<option key={obj.value}
                                         value={obj.value}>{obj.label}</option>);
-                                        })
+                                    })
                                 }
                             </Form.Control>
                             {/* <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} /> */}
@@ -369,8 +370,10 @@ export default class FormKilimpo extends Component {
                         contexto.erros && <ul>{erros}</ul>
                     }
 
-                    <h2>Dados recebidos:</h2>
-                    {contexto.kilimpo && <ul>{kilimpo}</ul>}
+                    <div style="visibility: hidden">
+                        <h2>Dados recebidos:</h2>
+                        {contexto.kilimpo && <ul>{kilimpo}</ul>}
+                    </div>
                 </font>
             </Container>
             </>

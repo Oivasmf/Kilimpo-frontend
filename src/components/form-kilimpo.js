@@ -127,8 +127,8 @@ export default class FormKilimpo extends Component {
         if (contexto.erros) {
             var v1 = contexto.erros.length;
             var v2 = erros.length;
-            console.log(v1 == v2);
-            if (erros === contexto.erros){
+            if (v1 == v2){
+                alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
             }
 
             erros = contexto.erros.map(
@@ -292,7 +292,6 @@ export default class FormKilimpo extends Component {
                                     })
                                 }
                             </Form.Control>
-                            {/* <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} /> */}
                         </Form.Group>
                     </Form.Row>
 
@@ -300,88 +299,16 @@ export default class FormKilimpo extends Component {
                     <br /><br /><br />
                     <Form.Group>
                         <Button type="submit" variant="success">Enviar</Button>{' '}
-                        {/* <input type="submit" value="Enviar" /> */}
                         <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
-                        {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}
                     </Form.Group>
                 </Form>
+                <br />
+                {
+                    contexto.erros && <ul>{erros}</ul>
+                }
 
-                    {/* <fieldset>
-                            <legend>Agendamento</legend>
-                            Nome completo: *<br />
-                            <input type="text" value={this.state.nome}
-                            onChange={this.onChangeNome} /><br />
-                            
-                            Telefone: <br />
-                            <input type="text" value={this.state.telefone}
-                            onChange={this.onChangeTelefone} /><br />
-                            
-                            Este número possui Whatsapp? * ([NÃO] caso prefira não informar o telefone)
-                            <br />
-                            {
-                                this.state.whats.map((obj, idx) => {
-                                    return(<React.Fragment key={idx}>
-                                        <input type="radio" name="whatsapp"
-                                        checked={this.state.whatsapp === obj.value}
-                                        value={obj.value}
-                                        onChange={this.onChangeWhatsapp} />
-                                        {obj.label}
-                                        </React.Fragment>);
-                                    })
-                                }
-                                <br />
-                                <br />
-                                <br />
-                                Marca do veículo: *<br />
-                                <input type="text" value={this.state.marca}
-                                onChange={this.onChangeMarca} /><br />
-                                
-                                Modelo: *<br />
-                                <input type="text" value={this.state.modelo}
-                                onChange={this.onChangeModelo} /><br />
-                                
-                                Ano: <br />
-                                <input type="text" value={this.state.ano}
-                                onChange={this.onChangeAno} /><br />
-                                
-                                Placa: *<br />
-                                <input type="text" value={this.state.placa}
-                                onChange={this.onChangePlaca} /><br /><br /><br />
-                                
-                                Data e horário de atendimento *<br />
-                                <input type="date" value={this.state.data}
-                                onChange={this.onChangeData}/>
-                                
-                                
-                                
-                                
-                                <select value={this.state.horario}
-                                onChange={this.onChangeHorario}>
-                                <option value="-1">--Selecione o horário de atendimento</option>
-                                {
-                                    this.state.horarios.map(obj => {
-                                        return(<option key={obj.value}
-                                            value={obj.value}>{obj.label}</option>);
-                                        })
-                                    }
-                                    </select><br />
-                                    
-                                    <hr />
-                                    <input type="submit" value="Enviar" />
-                                    <input type="button" value="Limpar"
-                                    onClick={this.onReset} />
-                                    * Campos obrigatórios
-                                </fieldset> */}
-
-                    {
-                        contexto.erros && <ul>{erros}</ul>
-                    }
-
-                    <div id="resultado">
-                        <h2>Seu horário foi agendado com sucesso!</h2><br />
-                        <h2>Dados recebidos:</h2>
-                        {contexto.kilimpo && <ul>{kilimpo}</ul>}
-                    </div>
+                <h2>Dados recebidos:</h2>
+                {contexto.kilimpo && <ul>{kilimpo}</ul>}
                 </font>
             </Container>
             </>

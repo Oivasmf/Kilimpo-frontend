@@ -163,10 +163,15 @@ export default class FormKilimpo extends Component {
 
         return (
             <>
-                <h1>
+                <h1 class="text-center">
                     Lavação automotiva KiLimpo
-                    </h1>
-                
+                </h1>
+                <br />
+  <br />
+  <br />
+                <h2 class="text-center">
+                    Informações do proprietário
+                </h2>
                     <Form>
   <Form.Group as={Row}>
     <Form.Label column sm={2}>
@@ -211,6 +216,9 @@ export default class FormKilimpo extends Component {
   <br />
   <br />
   <br />
+                <h2 class="text-center">
+                    Informações do veículo
+                </h2>
   <Form.Row>
         <Form.Group as={Col}>
             <Form.Label>

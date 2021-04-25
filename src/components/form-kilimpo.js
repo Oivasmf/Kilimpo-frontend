@@ -127,7 +127,7 @@ export default class FormKilimpo extends Component {
         if (contexto.erros) {
             console.log(erros.length); 
             console.log(contexto.erros.length); 
-            console.log(erros === contexto.erros);
+            console.log(erros.length == contexto.erros.length);
             if (erros === contexto.erros){
             }
 

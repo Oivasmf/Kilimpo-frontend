@@ -162,7 +162,7 @@ export default class FormKilimpo extends Component {
         } // fim do if (contexto.kilimpo)
 
         return (
-            <> <Container fluid class="text-center">
+            <> <Container fluid className="justify-content-md-center">
 
                 <h1>
                     Lavação automotiva KiLimpo
@@ -174,7 +174,7 @@ export default class FormKilimpo extends Component {
                     Informações do proprietário
                 </h2>
                     <Form>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} class="text-center">
     <Form.Label column sm={2}>
       Nome completo *
     </Form.Label>

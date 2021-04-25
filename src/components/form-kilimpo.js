@@ -256,11 +256,15 @@ export default class FormKilimpo extends Component {
                         </Form.Group>
                     </Form.Row>
                     <br />
-
-                    <Button type="submit" variant="success">Enviar</Button>{' '}
-                    {/* <input type="submit" value="Enviar" /> */}
-                    <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
-                    {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}
+                    
+                    <Form.Group className="col-md-6 offset-md-5">
+                        <Form.Row>
+                            <Button type="submit" variant="success">Enviar</Button>{' '}
+                            {/* <input type="submit" value="Enviar" /> */}
+                            <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
+                            {/* <input type="button" value="Limpar" onClick={this.onReset} /> */}
+                        </Form.Row>
+                    </Form.Group>
                     </Form>
 
 

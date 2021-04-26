@@ -141,6 +141,8 @@ export default class FormKilimpo extends Component {
             } else if (v1>0 && (this.state.contexto2 != this.state.contexto)) {
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
                 this.state.contexto2 = this.state.contexto;
+
+                this.state.nome = kilimpo.nome;
             }
         }
 

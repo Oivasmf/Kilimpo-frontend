@@ -143,6 +143,11 @@ export default class FormKilimpo extends Component {
                 this.state.contexto2 = this.state.contexto;
 
                 this.state.nome = contexto.kilimpo.nome;
+                this.state.marca = contexto.kilimpo.marca;
+                this.state.modelo = contexto.kilimpo.modelo;
+                this.state.placa = contexto.kilimpo.placa;
+                this.state.data = contexto.kilimpo.data;
+                this.state.horario = contexto.kilimpo.horario;
             }
         }
 

@@ -126,10 +126,11 @@ export default class FormKilimpo extends Component {
         if (contexto.erros) {
             var v1=contexto.erros.length;
             if (v1==0){
-                v1=-1;
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
+                v1=-1;
             } else {
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
+                v1=-1;
             }
             erros = contexto.erros.map(
                 (erro, idx) => (

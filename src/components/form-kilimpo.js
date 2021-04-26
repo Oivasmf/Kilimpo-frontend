@@ -124,7 +124,12 @@ export default class FormKilimpo extends Component {
         const contexto = this.state.contexto;
         let erros = [];
         if (contexto.erros) {
-            var v1=contexto.erros.length;
+            erros = contexto.erros.map(
+                (erro, idx) => (
+                    <li key={idx}>{erro.msg}</li>));
+
+
+            var v1=erros.length;
             if (v1==0){
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
                 v1=-1;
@@ -132,9 +137,6 @@ export default class FormKilimpo extends Component {
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
                 v1=-1;
             }
-            erros = contexto.erros.map(
-                (erro, idx) => (
-                    <li key={idx}>{erro.msg}</li>));
         }
 
         let kilimpo = [];

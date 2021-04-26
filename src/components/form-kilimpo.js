@@ -48,9 +48,10 @@ export default class FormKilimpo extends Component {
                 { value: '17:00h', label: "17:00h" },
                 { value: '17:30h', label: "17:30h" },
             ],
-            contexto: {}
+            contexto: {},
+            contexto2: {}
         }// fim de this.baseState
-        var v2;
+        
         this.state = this.baseState;
 
         this.onChangeNome = this.onChangeNome.bind(this);
@@ -132,15 +133,14 @@ export default class FormKilimpo extends Component {
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
 
-                var v1=erros.length;
-                
+                var v1=erros.length;                
 
-            if (v1==0 && v2!=-1){
+            if (v1==0 && (this.state.contexto2 != this.state.contexto)){
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
-                v2=-1;
-            } else if (v1>0 && v2!=-1) {
+                this.state.contexto2 = this.state.contexto;
+            } else if (v1>0 && (this.state.contexto2 != this.state.contexto)) {
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
-                v2=-1;
+                this.state.contexto2 = this.state.contexto;
             }
         }
 

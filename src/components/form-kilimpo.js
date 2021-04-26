@@ -142,7 +142,7 @@ export default class FormKilimpo extends Component {
                 alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
                 this.state.contexto2 = this.state.contexto;
 
-                this.state.nome = kilimpo.nome;
+                this.state.nome = contexto.nome;
             }
         }
 

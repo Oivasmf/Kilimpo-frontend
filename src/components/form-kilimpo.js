@@ -50,7 +50,7 @@ export default class FormKilimpo extends Component {
             ],
             contexto: {}
         }// fim de this.baseState
-
+        var v2;
         this.state = this.baseState;
 
         this.onChangeNome = this.onChangeNome.bind(this);
@@ -66,6 +66,7 @@ export default class FormKilimpo extends Component {
         this.onReset = this.onReset.bind(this);
     }// fim do constructor()
 
+    
     onChangeNome(e) {
         this.setState({ nome: e.target.value })
     }
@@ -132,7 +133,7 @@ export default class FormKilimpo extends Component {
                     <li key={idx}>{erro.msg}</li>));
 
                 var v1=erros.length;
-                var v2;
+                
 
             if (v1==0 && v2!=-1){
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");

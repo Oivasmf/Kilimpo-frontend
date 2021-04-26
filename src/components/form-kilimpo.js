@@ -49,9 +49,10 @@ export default class FormKilimpo extends Component {
                 { value: '17:00h', label: "17:00h" },
                 { value: '17:30h', label: "17:30h" },
             ],
-            contexto: {}
+            contexto: {},
+            contexto2: {}
         }// fim de this.baseState
-
+        
         this.state = this.baseState;
 
         this.onChangeNome = this.onChangeNome.bind(this);
@@ -67,6 +68,7 @@ export default class FormKilimpo extends Component {
         this.onReset = this.onReset.bind(this);
     }// fim do constructor()
 
+    
     onChangeNome(e) {
         this.setState({ nome: e.target.value })
     }
@@ -120,13 +122,36 @@ export default class FormKilimpo extends Component {
         this.setState(this.baseState);
     }// fim do onSubmit()
 
+    
+
     render() {
         const contexto = this.state.contexto;
         let erros = [];
+
         if (contexto.erros) {
             erros = contexto.erros.map(
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
+<<<<<<< HEAD
+=======
+
+                var v1=erros.length;                
+
+            if (v1==0 && (this.state.contexto2 != this.state.contexto)){
+                alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
+                this.state.contexto2 = this.state.contexto;
+            } else if (v1>0 && (this.state.contexto2 != this.state.contexto)) {
+                alert("Há algum erro no preenchimento do formulário. Consulte na lista ao fim da página e corrija o necessário.");
+                this.state.contexto2 = this.state.contexto;
+
+                this.state.nome = contexto.kilimpo.nome;
+                this.state.marca = contexto.kilimpo.marca;
+                this.state.modelo = contexto.kilimpo.modelo;
+                this.state.placa = contexto.kilimpo.placa;
+                this.state.data = contexto.kilimpo.data;
+                this.state.horario = contexto.kilimpo.horario;
+            }
+>>>>>>> 311381a194a880150c36594758d791cea4793061
         }
         let kilimpo = [];
         if (contexto.kilimpo) {

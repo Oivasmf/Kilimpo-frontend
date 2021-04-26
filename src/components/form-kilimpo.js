@@ -119,17 +119,20 @@ export default class FormKilimpo extends Component {
         this.setState(this.baseState);
     }// fim do onSubmit()
 
+    
+
     render() {
 
         const contexto = this.state.contexto;
         let erros = [];
+
         if (contexto.erros) {
             erros = contexto.erros.map(
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
 
-
-            var v1=erros.length;
+                    console.log(contexto.erros.length);
+                var v1=contexto.erros.length;
             if (v1==0){
                 alert("Seu horário foi agendado com sucesso! Confirme no fim da página os dados registrados.");
                 v1=-1;

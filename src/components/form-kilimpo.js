@@ -3,7 +3,6 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -125,6 +124,7 @@ export default class FormKilimpo extends Component {
     
 
     render() {
+
         const contexto = this.state.contexto;
         let erros = [];
 
@@ -132,8 +132,6 @@ export default class FormKilimpo extends Component {
             erros = contexto.erros.map(
                 (erro, idx) => (
                     <li key={idx}>{erro.msg}</li>));
-<<<<<<< HEAD
-=======
 
                 var v1=erros.length;                
 
@@ -151,8 +149,8 @@ export default class FormKilimpo extends Component {
                 this.state.data = contexto.kilimpo.data;
                 this.state.horario = contexto.kilimpo.horario;
             }
->>>>>>> 311381a194a880150c36594758d791cea4793061
         }
+
         let kilimpo = [];
         if (contexto.kilimpo) {
             kilimpo = [
@@ -188,174 +186,146 @@ export default class FormKilimpo extends Component {
 
         return (
             <> <Container fluid>
-
-                <h1>
+                <font face="Arial">
+                <h1 className="text-center">
                     Lavação automotiva KiLimpo
                 </h1>
-                <br />
-  <br />
-  <br />
-                <h2>
+                <br /><br /><br />
+                <h2 className="text-center">
                     Informações do proprietário
                 </h2>
-                    <Form onSubmit={this.onSubmit}>
-  <Form.Group as={Row} className="text-center">
-    <Form.Label column sm={1}>
-      Nome completo *
-    </Form.Label>
-    <Col sm={5}>
-      <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome}/>
-    </Col>
-  </Form.Group>
+                <br />
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group className="col-md-6 offset-md-4">
+                        <Form.Row className="text-center">
+                            <Form.Label column sm={2}>
+                                Nome completo *
+                            </Form.Label>
+                            <Col sm={5}>
+                                <Form.Control type="text" value={this.state.nome} onChange={this.onChangeNome} />
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
 
-  <Form.Group as={Row} className="text-center">
-    <Form.Label column sm={1}>
-      Telefone
-    </Form.Label>
-    <Col sm={5}>
-      <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
-    </Col>
-  </Form.Group>
+                    <Form.Group className="col-md-6 offset-md-4">
+                        <Form.Row className="text-center">
+                            <Form.Label column sm={2}>
+                                Telefone
+                            </Form.Label>
+                            <Col sm={5}>
+                                <Form.Control type="text" value={this.state.telefone} onChange={this.onChangeTelefone} />
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
 
-  <fieldset>
-    <Form.Group as={Row}>
-        <Form.Label as="legend" column sm={1} className="text-center">
-            Possui Whatsapp? ([NÃO] caso prefira não informar o telefone)
-        </Form.Label>
-        <Col>
-        {
-            this.state.whats.map((obj, idx) => {
-                return(<React.Fragment key={idx}>
-                    <Form.Check inline
-                    type="radio"
-                    name="Whatsapp"
-                    checked={this.state.whatsapp === obj.value}
-                    value={obj.value}
-                    onChange={this.onChangeWhatsapp} />
-                    {obj.label}
-                    </React.Fragment>);
-            })
-        }
-        </Col>
-    </Form.Group>
-  </fieldset>
-  <br />
-  <br />
-  <br />
-                <h2 className="text-center">
-                    Informações do veículo 
-                </h2>
-  <Form.Row className="text-center">
-        <Form.Group as={Col}>
-            <Form.Label>
-            Marca *
-            </Form.Label>
-            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca}/>
-        </Form.Group>
+                    <fieldset>
+                        <Form.Group className="col-md-6 offset-md-4">
+                            <Form.Row>
+                                <Form.Label as="legend" column sm={2} className="text-center">
+                                    Possui Whatsapp?
+                                </Form.Label>
+                                <Col>
+                                    {
+                                        this.state.whats.map((obj, idx) => {
+                                            return (<React.Fragment key={idx}>
+                                                <Form.Check inline
+                                                    type="radio"
+                                                    name="Whatsapp"
+                                                    checked={this.state.whatsapp === obj.value}
+                                                    value={obj.value}
+                                                    onChange={this.onChangeWhatsapp} />
+                                                {obj.label}
+                                            </React.Fragment>);
+                                        })
+                                    }
+                                </Col>
+                            </Form.Row>    
+                        </Form.Group>
+                    </fieldset>
+                    <br /><br /><br />
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Modelo *
-            </Form.Label>
-            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo}/>
-        </Form.Group>
+                    <h2 className="text-center">
+                        Informações do veículo
+                    </h2>
+                    <br />
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Placa *
-            </Form.Label>
-            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca}/>
-        </Form.Group>
+                    <Form.Row className="text-center">
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Marca *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.marca} onChange={this.onChangeMarca} />
+                        </Form.Group>
 
-        <Form.Group as={Col}>
-            <Form.Label>
-            Ano
-            </Form.Label>
-            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno}/>
-        </Form.Group>
-    </Form.Row>
-  
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Modelo *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.modelo} onChange={this.onChangeModelo} />
+                        </Form.Group>
 
-  <input type="submit" value="Enviar" />
-                            <input type="button" value="Limpar"
-                                onClick={this.onReset} />
-</Form>
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Placa *
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.placa} onChange={this.onChangePlaca} />
+                        </Form.Group>
 
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Ano
+                            </Form.Label>
+                            <Form.Control type="text" value={this.state.ano} onChange={this.onChangeAno} />
+                        </Form.Group>
+                    </Form.Row>
+                    <br /><br /><br />
+                    
+                    <h2 className="text-center">
+                        Data e horário do agendamento
+                    </h2>
+                    <br />
 
-                    {/* <fieldset>
-                            <legend>Agendamento</legend>
-                            Nome completo: *<br />
-                            <input type="text" value={this.state.nome}
-                            onChange={this.onChangeNome} /><br />
-                            
-                            Telefone: <br />
-                            <input type="text" value={this.state.telefone}
-                            onChange={this.onChangeTelefone} /><br />
-                            
-                            Este número possui Whatsapp? * ([NÃO] caso prefira não informar o telefone)
-                            <br />
-                            {
-                                this.state.whats.map((obj, idx) => {
-                                    return(<React.Fragment key={idx}>
-                                        <input type="radio" name="whatsapp"
-                                        checked={this.state.whatsapp === obj.value}
-                                        value={obj.value}
-                                        onChange={this.onChangeWhatsapp} />
-                                        {obj.label}
-                                        </React.Fragment>);
-                                    })
-                                }
-                                <br />
-                                <br />
-                                <br />
-                                Marca do veículo: *<br />
-                                <input type="text" value={this.state.marca}
-                                onChange={this.onChangeMarca} /><br />
-                                
-                                Modelo: *<br />
-                                <input type="text" value={this.state.modelo}
-                                onChange={this.onChangeModelo} /><br />
-                                
-                                Ano: <br />
-                                <input type="text" value={this.state.ano}
-                                onChange={this.onChangeAno} /><br />
-                                
-                                Placa: *<br />
-                                <input type="text" value={this.state.placa}
-                                onChange={this.onChangePlaca} /><br /><br /><br />
-                                
-                                Data e horário de atendimento *<br />
-                                <input type="date" value={this.state.data}
-                                onChange={this.onChangeData}/>
-                                
-                                
-                                
-                                
-                                <select value={this.state.horario}
-                                onChange={this.onChangeHorario}>
+                    <Form.Row className="text-center">
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Data *
+                            </Form.Label>
+                            <Form.Control type="date" value={this.state.data} onChange={this.onChangeData} className="text-center"/>
+                        </Form.Group>
+
+                        <Form.Group as={Col}>
+                            <Form.Label>
+                                Horário *
+                            </Form.Label>
+                            <Form.Control as="select" custom value={this.state.horario} 
+                            onChange={this.onChangeHorario} className="text-center">
                                 <option value="-1">--Selecione o horário de atendimento</option>
                                 {
                                     this.state.horarios.map(obj => {
                                         return(<option key={obj.value}
-                                            value={obj.value}>{obj.label}</option>);
-                                        })
-                                    }
-                                    </select><br />
-                                    
-                                    <hr />
-                                    <input type="submit" value="Enviar" />
-                                    <input type="button" value="Limpar"
-                                    onClick={this.onReset} />
-                                    * Campos obrigatórios
-                                </fieldset> */}
+                                        value={obj.value}>{obj.label}</option>);
+                                    })
+                                }
+                            </Form.Control>
+                        </Form.Group>
+                    </Form.Row>
 
+
+                    <br /><br /><br />
+                    <Form.Group>
+                        <Button type="submit" variant="success">Enviar</Button>{' '}
+                        <Button variant="secondary" onClick={this.onReset}>Limpar</Button>{' '}
+                    </Form.Group>
+                </Form>
+                <br />
                 {
                     contexto.erros && <ul>{erros}</ul>
                 }
 
                 <h2>Dados recebidos:</h2>
                 {contexto.kilimpo && <ul>{kilimpo}</ul>}
-                </Container>
+                </font>
+            </Container>
             </>
         );// fim do return
     }// fim do render()

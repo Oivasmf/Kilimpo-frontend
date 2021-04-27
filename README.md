@@ -1,5 +1,11 @@
 # Kilimpo
 
+Nome do Projeto: Kilimpo
+Nome dos integrantes: Sávio Magalhães Fernandes e Fernando Jacques Peiretti.
+Técnologias utilizadas: Javascript, React-bootstrap, Yarn.
+Descrição do Projeto: Formulário web no qual recebe informações do cliente e agenda seu horário entre as 8:00 às 18:00, durante os dias da semana(seg à sex).   
+
+
 Este documento foi escrito considerando que o servidor back-end já está instalado e configurado. Caso contrário, acesse https://github.com/Oivasmf/Kilimpo-frontend.git, abra o README e siga o passo-a-passo.
 
 1 Instalar o utilitário create-react-app
